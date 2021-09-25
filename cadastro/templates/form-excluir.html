@@ -1,0 +1,44 @@
+{% extends 'modelo.html' %}
+{% load static %}
+
+
+{% block titulo %}
+<title>Página Inicial</title>
+{% endblock %}
+
+
+{% block conteudo%}
+<!-- Features Section Start -->
+<section id="features" class="section-padding">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Formulario</h2>
+            <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+
+            <h3>Excluir Registros</h3>
+            <p class="lead">
+                Se excluir perdera toda a informação.
+            </p>
+
+            <hr>
+
+            <form action="" method="POST">
+
+                <p>
+                    Deseja excluir o registro? <b><strong>{{ object }}</strong></b>
+                </p>
+
+                {% csrf_token%}
+
+                {{ form.as_p }}
+
+                <button type="submit" class="btn btn-danger"> Excluir</button>
+            </form>
+
+        </div>
+    </div>
+</section>
+<!-- Features Section End -->
+
+{% endblock %}
+
